@@ -1,5 +1,5 @@
 const staff =  require("../model/model")
-//const router = express.Router();
+
 // Create a function to get all employees
 const getAllStaff = async (req, res, next) => {
   try {
@@ -31,6 +31,7 @@ const getStaffById = async (req, res, next) => {
   }
 };
 
+//Create and Update process in one API
 const createStaff = async (req, res, next) => {
   const { id } = req.body;
   const newData = req.body;
@@ -57,31 +58,6 @@ const createStaff = async (req, res, next) => {
   }
 };
 
-/*
-// Create a function to create an employee
-const createStaff = async (req, res, next) => {
-  try {
-    const data = await staff.create(req.body);
-    res.status(201).send(data);
-  } catch (err) {
-    next(err);
-  }
-};
-// Create a function to update an employee
-const updateStaff = async (req, res, next) => {
-  try {
-    const data = await staff.findByIdAndUpdate(req.params.id, req.body);
-    if (data) {
-      res.status(200).send("Updated Successfully");
-    } else {
-      raiseRecord404Error(req, res);
-    }
-  } catch (err) {
-    next(err);
-  }
-};
-*/
-
 // Create a function to delete an employee
 const deleteStaff = async (req, res, next) => {
   try {
@@ -95,6 +71,7 @@ const deleteStaff = async (req, res, next) => {
     next(err);
   }
 };
+
 // Call the functions using the router
 module.exports = {getAllStaff,
                   getStaffById,
